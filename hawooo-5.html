@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Hawooo</title>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        body {
+            width: 1280px;
+            margin: 0 auto;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 826px;
+        }
+
+        .textbox {
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .textbox h4 {
+            font-weight: 600;
+            color: #707070;
+            margin-top: 86px;
+        }
+
+        .groupall {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .productbox {
+            justify-content: space-between;
+        }
+
+        .product-bg {
+            width: 255px;
+            height: 410px;
+            border: 1px solid #E3E3E3;
+            border-radius: 4px;
+            margin-bottom: 50px;
+        }
+
+        .robotbox {
+            width: 255px;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #E3E3E3;
+            height: 249px;
+        }
+
+        .robot {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 29.88px;
+        }
+
+        .product-detailbox {
+            justify-content: space-between;
+            height: 161px;
+        }
+
+        .product-detail {
+            width: 255px;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 13px;
+        }
+
+        .product-margin {
+            justify-content: space-evenly;
+            flex-direction: column;
+            height: 100px;
+        }
+
+        .product-detail p {
+            width: 221px;
+            font-size: 15px;
+            color: #232323;
+            text-align: left;
+            margin: 0;
+            font-weight: 500;
+            line-height: 20px;
+        }
+
+        .product-detail .shipping {
+            font-size: 11px;
+            color: #8E9294;
+            line-height: 15px;
+            margin-top: 3px;
+        }
+
+        .pricebox {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .product-detail .special-price {
+            font-size: 22px;
+            color: #FF9800;
+            font-weight: 700;
+            width: 110px;
+            line-height: 29px;
+        }
+
+        .product-detail .price {
+            text-decoration: line-through;
+            color: #8E9294;
+            font-size: 15px;
+            width: 110px;
+            line-height: 20px;
+        }
+
+        button {
+            width: 221px;
+            height: 27px;
+            background: #0085FF;
+            outline-style: none;
+            border: none;
+            border-radius: 2px;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .pagebox {
+            width: 240px;
+            height: 38px;
+            border-radius: 4px;
+            margin-bottom: 50px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .arrow-left{
+            width: 40px;
+            height: 38px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #DEE2E6;
+            border-radius: 4px 0 0 4px;
+        }
+        .arrow-left:hover{
+            background:#b6d2ec;
+            border:1px solid #b6d2ec;
+
+        }
+        .arrow-left img{
+            transform:rotate(180deg);
+            width: 9px;
+            height: 19px;
+        }
+        .slected{
+            background: #0085FF;
+            border:1px solid #0085FF;
+            color: #ffffff;
+            font-weight: 400;
+            width: 40px;
+            height: 38px;
+            align-items: center;
+            justify-content: center;
+        }
+        .ortherpage{
+            background: transparent;
+            border:1px solid #DEE2E6;
+            border-right: transparent;
+            color: #007BFF;
+        }
+        .pagebox a{
+            text-decoration: none;
+        }
+        .pagebox a:visited{
+            color: #007BFF;
+        }
+        .ortherpage:hover{
+            background:#b6d2ec ;
+            border:1px solid #b6d2ec;
+        }
+        .arrow-right{
+            border-radius: 0 4px 4px 0;
+        }
+        .arrow-right img{
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="wrapper">
+            <div class="textbox flex">
+                <h4>Showing 1-6 of 30 Products</h4>
+                <h4>Sort by :</h4>
+            </div>
+            <!---------------------- 第一排商品 ------------------------>
+            <div class="productbox flex">
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/robot.png" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/earphone.png" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/fan.jpg" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---------------------- 第二排商品 ------------------------>
+            <div class="productbox flex">
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/masage.png" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/watch.png" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-bg">
+                    <div class="robotbox flex">
+                        <img class="robot" src="images/powerbank.png" alt="">
+                    </div>
+                    <div class="product-detailbox flex">
+                        <div class="product-detail flex">
+                            <p>Name of the amazing product could be here</p>
+                            <p class="shipping">Shipping via Fedex</p>
+                            <div class="product-margin flex">
+
+                                <div class="pricebox flex">
+                                    <p class="special-price">RM200.00</p>
+                                    <p class="price">RM300.00</p>
+                                </div>
+                                <button>ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="groupall flex">
+                <div class="pagebox flex">
+                    <a href="hawooo-2.html"><div class="arrow-left flex">
+                        <img src="images/double-angle-pointing-to-right.svg" alt="">
+                    </div></a>
+                    <a href="hawooo.html"><div class="slected ortherpage flex">
+                        <p>1</p>
+                    </div></a>
+                    <a href="hawooo-2.html"><div class="slected ortherpage flex">
+                        <p>2</p>
+                    </div></a>
+                    <a href=""><div class="slected ortherpage flex">
+                        <p>...</p>
+                    </div></a>
+                    <a href=""><div class="slected flex">
+                        <p>5</p>
+                    </div></a>
+                    <a href="hawooo.html"><div class="arrow-left arrow-right flex">
+                        <img src="images/double-angle-pointing-to-right.svg" alt="">
+                    </div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
