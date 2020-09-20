@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
     <title>Hawooo</title>
     <style>
         .flex {
@@ -39,9 +40,51 @@
         .textbox h4 {
             font-weight: 600;
             color: #707070;
-            margin-top: 86px;
+            margin: 86px 10px 0 0;
         }
 
+        .sortbox {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        select {
+            margin-top: 78px;
+            font-family: 'Roboto', sans-serif;
+            width: 161px;
+            height: 38px;
+            border: 1px solid #CED4DA;
+            font-size: 16px;
+            border-radius: 4px;
+            color: #495057;
+            font-weight: 400;
+            padding: 8px 90px 9px 16px;
+            outline: none;
+            /* appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none; */
+            padding-right: 14px;
+            padding-left: 20px;
+            background-image: url("images/drop-down.svg") no-repeat right transparent;
+
+        }
+
+
+        select:focus {
+            border: 1px solid #0085FF;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        option {
+            border: none;
+            outline-style: none;
+
+
+        }
+        
         .groupall {
             flex-direction: column;
             align-items: center;
@@ -65,12 +108,31 @@
             align-items: center;
             border-bottom: 1px solid #E3E3E3;
             height: 249px;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .newbox {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+        }
+
+        .new {
+            width: 42px;
+            height: 22px;
+            background: #FF5B6F;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+
         }
 
         .robot {
             width: 200px;
             height: 200px;
-            margin-bottom: 29.88px;
         }
 
         .product-detailbox {
@@ -143,6 +205,10 @@
             cursor: pointer;
         }
 
+        button:hover {
+            background: #0275e0;
+        }
+
         .pagebox {
             width: 240px;
             height: 38px;
@@ -150,7 +216,8 @@
             margin-bottom: 50px;
             font-family: 'Helvetica Neue', sans-serif;
         }
-        .arrow-left{
+
+        .arrow-left {
             width: 40px;
             height: 38px;
             align-items: center;
@@ -158,19 +225,22 @@
             border: 1px solid #DEE2E6;
             border-radius: 4px 0 0 4px;
         }
-        .arrow-left:hover{
-            background:#b6d2ec;
-            border:1px solid #b6d2ec;
+
+        .arrow-left:hover {
+            background: #b6d2ec;
+            border: 1px solid #b6d2ec;
 
         }
-        .arrow-left img{
-            transform:rotate(180deg);
+
+        .arrow-left img {
+            transform: rotate(180deg);
             width: 9px;
             height: 19px;
         }
-        .slected{
+
+        .slected {
             background: #0085FF;
-            border:1px solid #0085FF;
+            border: 1px solid #0085FF;
             color: #ffffff;
             font-weight: 400;
             width: 40px;
@@ -178,26 +248,32 @@
             align-items: center;
             justify-content: center;
         }
-        .ortherpage{
+
+        .ortherpage {
             background: transparent;
-            border:1px solid #DEE2E6;
+            border: 1px solid #DEE2E6;
             border-right: transparent;
             color: #007BFF;
         }
-        .pagebox a{
+
+        .pagebox a {
             text-decoration: none;
         }
-        .pagebox a:visited{
+
+        .pagebox a:visited {
             color: #007BFF;
         }
-        .ortherpage:hover{
-            background:#b6d2ec ;
-            border:1px solid #b6d2ec;
+
+        .ortherpage:hover {
+            background: #b6d2ec;
+            border: 1px solid #b6d2ec;
         }
-        .arrow-right{
+
+        .arrow-right {
             border-radius: 0 4px 4px 0;
         }
-        .arrow-right img{
+
+        .arrow-right img {
             transform: rotate(0deg);
         }
     </style>
@@ -208,20 +284,40 @@
         <div class="wrapper">
             <div class="textbox flex">
                 <h4>Showing 1-6 of 30 Products</h4>
-                <h4>Sort by :</h4>
-                <div id="app">
-                    <select v-model='selector'>
-                        <option v-for="product in products">{{product.origin}}</option>
-                    </select>
-                    <ul>
-                        <li v-for='product in products | filterBy selector in "origin"'>{{product.name}}</li>
-                    </ul>
+                <div class="sortbox flex">
+                    <h4>Sort by : </h4>
+                    <div id="app">
+                        <select v-model='selector'>
+                            <option v-for="product in products">{{product.origin}}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                var vm = new Vue({
+                    el: '#app',
+                    data: {
+                        selector: 'Popular',
+                        products: [{
+                            id: 1,
+                            origin: 'Popular'
+                        }, {
+                            id: 2,
+                            origin: 'Newest'
+                        }, {
+                            id: 3,
+                            origin: 'Price'
+                        },]
+                    }
+                });
+            </script>
             <!---------------------- 第一排商品 ------------------------>
             <div class="productbox flex">
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/robot.png" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -241,6 +337,9 @@
                 </div>
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/earphone.png" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -260,6 +359,9 @@
                 </div>
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/fan.jpg" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -282,6 +384,9 @@
             <div class="productbox flex">
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/masage.png" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -301,6 +406,9 @@
                 </div>
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/watch.png" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -320,6 +428,9 @@
                 </div>
                 <div class="product-bg">
                     <div class="robotbox flex">
+                        <div class="newbox">
+                            <div class="new flex">NEW</div>
+                        </div>
                         <img class="robot" src="images/powerbank.png" alt="">
                     </div>
                     <div class="product-detailbox flex">
@@ -340,48 +451,39 @@
             </div>
             <div class="groupall flex">
                 <div class="pagebox flex">
-                    <a href=""><div class="arrow-left flex"></a>
-                        <img src="images/double-angle-pointing-to-right.svg" alt="">
-                    </div>
-                    <div class="slected flex">
-                        <p>1</p>
-                    </div>
-                    <a href="hawooo-2.html"><div class="slected ortherpage flex">
-                        <p>2</p>
-                    </div></a>
-                    <a href=""><div class="slected ortherpage flex">
-                        <p>...</p>
-                    </div></a>
-                    <a href="hawooo-5.html"><div class="slected ortherpage flex">
-                        <p>5</p>
-                    </div></a>
-                    <a href="hawooo-2.html"><div class="arrow-left arrow-right flex">
-                        <img src="images/double-angle-pointing-to-right.svg" alt="">
-                    </div></a>
+                    <a href="">
+                        <div class="arrow-left flex">
+                    </a>
+                    <img src="images/double-angle-pointing-to-right.svg" alt="">
                 </div>
+                <div class="slected flex">
+                    <p>1</p>
+                </div>
+                <a href="hawooo-2.html">
+                    <div class="slected ortherpage flex">
+                        <p>2</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="slected ortherpage flex">
+                        <p>...</p>
+                    </div>
+                </a>
+                <a href="hawooo-5.html">
+                    <div class="slected ortherpage flex">
+                        <p>5</p>
+                    </div>
+                </a>
+                <a href="hawooo-2.html">
+                    <div class="arrow-left arrow-right flex">
+                        <img src="images/double-angle-pointing-to-right.svg" alt="">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
+    </div>
+
 </body>
-<script type="text/javascript">
-    var vm=new Vue({
-        el:'#app',
-        data:{
-            selector:'Popular',
-            products:[{
-                id:1,
-                name:'BenQ',
-                origin:'Popular'
-            },{
-                id:2,
-                name:'LG',
-                origin:'Newest'
-            },{
-                id:3,
-                name:'ASUS',
-                origin:'Price'
-            },]
-        }
-    });
-</script>
+
 </html>
